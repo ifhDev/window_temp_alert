@@ -41,6 +41,24 @@ Perfect for hot weather, city dwellers, or anyone trying to optimize home ventil
      project_setup.bat
      ```
 
+      * **Important for Windows/PowerShell users:**
+
+        If you see an error about “execution policy” or `activate.ps1` not loading, run the following command in your PowerShell window **before** activating the virtual environment:
+
+        ```powershell
+        Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+        .venv\Scripts\Activate.ps1
+        ```
+
+        This temporarily allows script activation in just this window.  
+        Alternatively, use **Command Prompt** (`cmd.exe`) instead of PowerShell, and run:
+
+        ```command prompt
+        .venv\Scripts\activate.bat
+        ```
+
+        You should see `(.venv)` in your prompt when the virtual environment is active.
+
    * **Alternatively (cross-platform, Python 3.8+):**
 
      ```bash

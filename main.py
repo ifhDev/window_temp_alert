@@ -22,18 +22,35 @@ def main():
 
     while True:
         outdoor = current_weather(lat, lon, api_key)
-        if outdoor < indoor:
-            print("OK, open your window :)")
+        daytime = is_daytime()
+
+        if daytime:
+            target = indoor <= outdoor
+            diff = indoor - outdoor
+            success_msg = "OK, close your window :)"
+            status_msg = f"It is still {diff :.1f} °C cooler outside."
+        else:
+            target = outdoor < indoor
+            diff = outdoor - indoor
+            success_msg = "OK, open your window :)"
+            status_msg = f"It is still {diff:.1f} °C warmer outside."
+        
+        # check for target
+        if target:
+            print(success_msg)
             input("Press Enter to exit...")
             break
+
+        # status update
         print(f"Indoor: {indoor:.1f}°C | Outdoor: {outdoor:.1f}°C")
-        print(f"It is still {outdoor - indoor:.1f} °C warmer outside.")
+        print(status_msg)
+        
+        # check wait time
         wait_time(indoor, outdoor)
 
 # Todo:
 # * add "test call" that shows crossover time (part of weather_api.py?)
 # * add Fahrenheit option ("units.py")
-# * add functionality for morning/evening (when to close vs when to open, part of time_utils.py)
 
 if __name__ == "__main__":
     main()

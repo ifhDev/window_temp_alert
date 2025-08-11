@@ -1,6 +1,6 @@
 # Window Temp Alert
 
-This is a Python utility that helps you know when it's cool enough outside to open your windows.
+This is a Python utility that helps you know when it's cool enough outside to open your windows or when it's time to close them in the morning.
 Perfect for hot weather, city dwellers, or anyone trying to optimize home ventilation and energy use.
 
 ---
@@ -116,6 +116,10 @@ You can safely stop the process at any time with `Ctrl+C` (Windows/Linux) or `Cm
 
 * **Supported regions:**
   Any country supported by OpenWeatherMap and pgeocode.
+
+* **Time-of-day detection:**
+  The app determines morning/evening mode using your device's local system clock, **not** the OpenWeatherMap API.
+  If your device's time or timezone is set incorrectly, you may get inaccurate “open/close window” recommendations.
 
 * **Current version:**
   MVP – currently supports Celsius only, with planned support for Fahrenheit, forecast feature, and more.

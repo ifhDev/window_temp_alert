@@ -9,6 +9,7 @@
 * [x] Wait logic adjusts based on how close the temps are
 * [x] Safe exit via Ctrl+C/Cmd+C at any time
 * [x] Modular code—easy to maintain or extend
+* [x] Morning/Evening Logic
 
 ---
 
@@ -21,10 +22,6 @@
 * [ ] **Fahrenheit Support:**
   Allow user input/output in °F as well as °C, with proper conversion.
   *Status: To be added (possibly as `units.py`).*
-
-* [ ] **Morning/Evening Logic:**
-  Optional: Add functionality to suggest best window times, e.g. “Close before it gets too hot in the morning.”
-  *Status: Idea stage (may go in `time_utils.py`).*
 
 * [ ] **User Notifications:**
   Optionally add desktop notifications (pop-ups) in addition to console print.
